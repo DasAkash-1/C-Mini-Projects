@@ -23,8 +23,9 @@ void update();
 void delete();
 
 void menu() {
-    printf("\nWelcome to Computerized Student Directory\n");
-    printf("--------------------------------------------\n");
+    printf("\n*********************************************");
+    printf("\n* Welcome to Computerized Student Directory *\n");
+    printf("*********************************************\n");
     printf("1. Add Student\n");
     printf("2. Find Student by ID\n");
     printf("3. Update Student info\n");
@@ -126,9 +127,10 @@ void delete() {
 }
 
 void save() {
-    FILE *fp = fopen("phone_windows.txt", "w");
+    FILE *fp;
+    fp = fopen("phone_windows.txt", "w");
     if (fp == NULL) {
-        printf("Error: Cannot open file for writing.\n");
+        printf("Can't open file.\n");
         return;
     }
 
@@ -139,12 +141,13 @@ void save() {
     }
 
     fclose(fp);
-    printf("Directory saved to disk.\n");
+    printf("Saved to disk.\n");
 }
 
 
 void load(void) {
-    FILE *fp = fopen("phone.txt", "r");
+    FILE *fp;
+    fp = fopen("phone.txt", "r");
     if (fp == NULL) {
         printf("Can't open file.\n");
         return;
